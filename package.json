@@ -1,0 +1,42 @@
+{
+  "name": "todo-archaeology",
+  "version": "0.1.0",
+  "description": "Excavates every TODO/FIXME/HACK in a git repo and uses git blame to reveal how old each one is and who wrote it.",
+  "keywords": [
+    "todo",
+    "fixme",
+    "hack",
+    "git-blame",
+    "cli",
+    "tech-debt"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "todo-archaeology": "dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx src/cli.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "picocolors": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0",
+    "vitest": "^4.1.0"
+  }
+}
